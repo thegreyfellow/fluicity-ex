@@ -36,10 +36,8 @@ const useStyles = makeStyles(() => ({
   list: {
     fontSize: 16,
   },
-  cardBottom: {
-    marginTop: 30,
-  },
-  cardButtons: {
+  icon: {
+    height: 24,
   },
 }));
 
@@ -86,8 +84,12 @@ const Banner = () => {
                   className={classes.list}
                 >
                   <Grid xs="auto" item>
-                    <Grid container spacing={1} justify="center" alignItems="center">
-                      <Grid item>
+                    <Grid
+                      container
+                      spacing={1}
+                      alignItems="center"
+                    >
+                      <Grid item className={classes.icon}>
                         <Dashboard fontSize="inherit" />
                       </Grid>
                       <Grid item>
@@ -100,10 +102,10 @@ const Banner = () => {
                   <Grid xs="auto" item>
                     <Grid
                       container
-                      justify="flex-start"
+                      spacing={1}
                       alignItems="center"
                     >
-                      <Grid item>
+                      <Grid item className={classes.icon}>
                         <Room fontSize="inherit" />
                       </Grid>
                       <Grid item>
@@ -114,8 +116,12 @@ const Banner = () => {
                     </Grid>
                   </Grid>
                   <Grid xs="auto" item>
-                    <Grid container justify="flex-start" alignItems="center">
-                      <Grid item>
+                    <Grid
+                      container
+                      spacing={1}
+                      alignItems="center"
+                    >
+                      <Grid item className={classes.icon}>
                         <VerifiedUser fontSize="inherit" />
                       </Grid>
                       <Grid item>
