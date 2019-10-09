@@ -1,7 +1,13 @@
 import React from 'react';
 
-import { Grid, Button, Typography } from '@material-ui/core';
+import {
+  Grid,
+  Button,
+  Typography,
+  useMediaQuery,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
 
 const useStyles = makeStyles(() => ({
   cardBottom: {
@@ -37,6 +43,8 @@ const buttonStyles = makeStyles(() => ({
 }));
 
 const CardBottom = () => {
+  const isSm = useMediaQuery('(min-width:500px)');
+
   const classes = useStyles();
   const buttonClasses = buttonStyles();
 
@@ -101,8 +109,7 @@ const CardBottom = () => {
             quia consequatur blanditiis placeat vel eos?
           </Typography>
         </Grid>
-        {/* spacing should be 0 when reaching 500px width */}
-        <Grid item container spacing={2}>
+        <Grid item container spacing={isSm ? 2 : 0}>
           <Grid item>
             <Grid container spacing={1}>
               <Grid item>
