@@ -6,6 +6,7 @@ import {
   Avatar,
   Grid,
   Container,
+  useMediaQuery,
 } from '@material-ui/core';
 import { Dashboard, Room, VerifiedUser } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
@@ -44,6 +45,8 @@ const useStyles = makeStyles(() => ({
 const Banner = () => {
   const classes = useStyles();
 
+  const isSm = useMediaQuery('(max-width:620px)');
+
   return (
     <Container maxWidth="xl">
       <Card>
@@ -55,7 +58,7 @@ const Banner = () => {
             container
             spacing={3}
             direction="row"
-            justify="flex-start"
+            justify={isSm ? 'center' : 'flex-start'}
             alignItems="flex-end"
             className={classes.cardTop}
           >
@@ -67,7 +70,7 @@ const Banner = () => {
                 container
                 direction="column"
                 justify="flex-start"
-                alignItems="flex-start"
+                alignItems={isSm ? 'center' : 'flex-start'}
               >
                 <Grid item>
                   <Typography variant="h6">
@@ -77,9 +80,9 @@ const Banner = () => {
                 <Grid
                   item
                   container
-                  spacing={2}
+                  spacing={isSm ? 1 : 2}
                   direction="row"
-                  justify="flex-start"
+                  justify={isSm ? 'center' : 'flex-start'}
                   alignItems="center"
                   className={classes.list}
                 >

@@ -1,17 +1,13 @@
 import React from 'react';
 
 import {
-  Grid,
-  Button,
-  Typography,
-  useMediaQuery,
+  Grid, Button, Typography,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles(() => ({
   cardBottom: {
-    margin: 10,
+    margin: '14px 5px',
   },
   description: {
     color: '#5d5d5d',
@@ -26,8 +22,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 const buttonStyles = makeStyles(() => ({
-  cardButtons: {
-  },
   button: {
     borderRadius: 20,
     width: 150,
@@ -43,10 +37,10 @@ const buttonStyles = makeStyles(() => ({
 }));
 
 const CardBottom = () => {
-  const isSm = useMediaQuery('(min-width:500px)');
-
   const classes = useStyles();
   const buttonClasses = buttonStyles();
+
+  // const isSm = useMediaQuery('(min-width:620px)');
 
   const Buttons = () => (
     <Grid
@@ -58,7 +52,6 @@ const CardBottom = () => {
       direction="row"
       justify="center"
       alignItems="center"
-      className={buttonClasses.cardButtons}
     >
       <Grid item>
         <Button
@@ -71,7 +64,7 @@ const CardBottom = () => {
       </Grid>
       <Grid item>
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           className={`${buttonClasses.button} ${buttonClasses.SecondaryButton}`}
         >
@@ -85,7 +78,7 @@ const CardBottom = () => {
     <Grid
       item
       container
-      spacing={5}
+      spacing={2}
       direction="row-reverse"
       justify="space-between"
       alignItems="baseline"
@@ -97,7 +90,7 @@ const CardBottom = () => {
         md={8}
         item
         container
-        spacing={5}
+        spacing={2}
         direction="column"
         justify="space-around"
         alignItems="flex-start"
@@ -105,15 +98,18 @@ const CardBottom = () => {
         <Grid item>
           <Typography variant="body2" className={classes.description}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur amet nostrum expedita aliquam, officia, exercitationem vitae
-            quia consequatur blanditiis placeat vel eos?
+            Consequuntur amet nostrum expedita aliquam, officia, exercitationem
+            vitae quia consequatur blanditiis placeat vel eos?
           </Typography>
         </Grid>
-        <Grid item container spacing={isSm ? 2 : 0}>
+        <Grid item container spacing={1}>
           <Grid item>
             <Grid container spacing={1}>
               <Grid item>
-                <Typography variant="subtitle2" className={classes.detailsNumber}>
+                <Typography
+                  variant="subtitle2"
+                  className={classes.detailsNumber}
+                >
                   1800
                 </Typography>
               </Grid>
@@ -127,7 +123,10 @@ const CardBottom = () => {
           <Grid item>
             <Grid container spacing={1}>
               <Grid item>
-                <Typography variant="subtitle2" className={classes.detailsNumber}>
+                <Typography
+                  variant="subtitle2"
+                  className={classes.detailsNumber}
+                >
                   569
                 </Typography>
               </Grid>
@@ -141,7 +140,10 @@ const CardBottom = () => {
           <Grid item>
             <Grid container spacing={1}>
               <Grid item>
-                <Typography variant="subtitle2" className={classes.detailsNumber}>
+                <Typography
+                  variant="subtitle2"
+                  className={classes.detailsNumber}
+                >
                   12
                 </Typography>
               </Grid>
